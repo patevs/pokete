@@ -1,4 +1,4 @@
-name: ruff-format-check
+name: pytest
 
 on:
   push:
@@ -16,8 +16,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Ruff
-        run: pip install ruff
+      - name: Install Pytest
+        run: pip install pytest
 
-      - name: Run Ruff check
-        run: ruff check .
+      - name: Run Pytest
+        run: python -m pytest src/tests -v
